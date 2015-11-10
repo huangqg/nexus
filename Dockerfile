@@ -24,8 +24,8 @@ RUN mkdir -p /opt/sonatype/nexus \
   && rm -rf /tmp/nexus-${NEXUS_VERSION}
 
 RUN useradd -r -u 200 -m -c "nexus role account" -d ${SONATYPE_WORK} -s /bin/false nexus
-RUN chown nexus:nexus -R ${SONATYPE_WORK}
 VOLUME ${SONATYPE_WORK}
+RUN chown nexus:nexus -R ${SONATYPE_WORK}
 
 EXPOSE 8081
 WORKDIR /opt/sonatype/nexus
